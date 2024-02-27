@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.body {
+    min-height: 100vh;
+    background-color: #0c192c;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.bubles {
+    position: relative;
+    display: flex;
+}
+.bubles span {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background-color: #4fc3dc;
+    margin: 0 4px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px #4fc3dc44,
+    0 0 50px #4fc3dc,
+    0 0 100px #4fc3dc;
+    animation: animate 15s linear infinite;
+    animation-duration: calc(125s / var(--i));
+}
+.bubles span:nth-child(even) {
+    background-color: #ff2d75;
+    box-shadow: 0 0 0 10px #ff2d7544,
+    0 0 50px #ff2d75,
+    0 0 100px #ff2d75;
+}
+@keyframes animate{
+    0% {
+        transform: translateY(100vh) scale(0); 
+    }
+    100% {
+        transform: translateY(-10vh) scale(1);
+    }
+}
+/* ===================================================== */
+
+.cell {
+    width: 75px;
+    height: 75px;
+    border: 2px solid white;
+    box-shadow: 0 0 0 2px white;
+    line-height: 75px;
+    font-size: 50px;
+    cursor: pointer;
+}
+
+#cellContainer {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    width: 225px;
+    margin: auto;
+    margin-top: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+#gameContainer {
+    font-family:cursive;
+    text-align: center;
+    color: white;
+}
+button {
+    background-color: white;
+    width: 10rem;
+    height: 2.5rem;
+    margin-top:1rem ;
+    border-radius: 10px;
+    border: 0;
+    cursor: pointer;
+}
